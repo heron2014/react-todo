@@ -2,6 +2,8 @@
 
 Live link: https://still-brook-89433.herokuapp.com
 
+![img](images-readme/img.png)
+
 ### Run this repo:
 
 - clone the repo
