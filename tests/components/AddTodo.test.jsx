@@ -12,15 +12,16 @@ describe('AddTodo', () => {
   });
 
   it('should disptach ADD_TODO when valid todo text', () => {
+    var todoText = 'Check mail';
     var action = {
       type: 'ADD_TODO',
-      text: 'Check mail'
+      text: todoText
     }
     var spy = expect.createSpy();
-    var addtodo = TestUtils.renderIntoDocument(<AddTodo disptach={spy} />);
+    var addtodo = TestUtils.renderIntoDocument(<AddTodo dispatch={spy} />);
     var $el = $(ReactDOM.findDOMNode(addtodo));
 
-    addtodo.refs.todoText.value = 'Check mail';
+    addtodo.refs.todoText.value = todoText;
     TestUtils.Simulate.submit($el.find('form')[0]);
 
     expect(spy).toHaveBeenCalledWith(action);
