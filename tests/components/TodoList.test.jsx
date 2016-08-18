@@ -4,7 +4,9 @@ var expect = require('expect');
 var $ = require('jquery');
 var TestUtils = require('react-addons-test-utils');
 
-var TodoList = require('TodoList');
+//we import becausethis method has support for export default
+// ConnectedTodoList is the function that has been passed to connect
+import ConnectedTodoList, {TodoList} from 'TodoList';
 var Todo = require('Todo');
 
 describe('TodoList', () => {
