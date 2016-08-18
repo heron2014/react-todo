@@ -30,7 +30,9 @@ export var todosReducers = (state = [], action) => {
           ...todo,
           completed: !todo.completed,
           completedAt: !todo.completed ? moment().unix() : null
-        }
+        };
+      } else {
+        return todo;
       }
     })
   case 'ADD_TODO':
