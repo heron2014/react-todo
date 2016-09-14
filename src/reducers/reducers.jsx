@@ -43,13 +43,7 @@ export var todosReducers = (state = [], action) => {
   case 'ADD_TODO':
     return [
       ...state,
-      {
-        id: uuid(),
-        text: action.text,
-        completed: false,
-        createdAt: moment().unix(),
-        completedAt: null
-      }
+      action.todo
     ]
   default:
     return state;
