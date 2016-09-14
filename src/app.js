@@ -16,6 +16,7 @@ store.subscribe(() => {
 });
 
 var initialTodos = TodoAPI.getTodos();
+//get initial todos from store by dispatching action addTodos to the store
 store.dispatch(actions.addTodos(initialTodos));
 // load foundation
 $(document).foundation();
