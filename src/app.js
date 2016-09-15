@@ -9,15 +9,18 @@ var actions = require('actions');
 var store = require('configureStore').configure();
 var TodoAPI = require('TodoAPI');
 
-store.subscribe(() => {
-  var state = store.getState();
-  console.log('New state', state);
-  TodoAPI.setTodos(state.todos);
-});
+// store.subscribe(() => {
+//   var state = store.getState();
+//   console.log('New state', state);
+//   TodoAPI.setTodos(state.todos);
+// });
 
-var initialTodos = TodoAPI.getTodos();
+// var initialTodos = TodoAPI.getTodos();
 //get initial todos from store by dispatching action addTodos to the store
-store.dispatch(actions.addTodos(initialTodos));
+// store.dispatch(actions.addTodos(initialTodos));
+
+store.dispatch(actions.startAddTodos())
+console.log(actions.startAddTodos());
 // load foundation
 $(document).foundation();
 
