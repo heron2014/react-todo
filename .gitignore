@@ -1,2 +1,3 @@
 node_modules/
 src/firebase/keys.js
+public/bundle.js
