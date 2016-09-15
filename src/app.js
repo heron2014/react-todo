@@ -10,21 +10,13 @@ import router from 'src/router/'
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    store.dispatch(actions.login(user.uid))
     hashHistory.push('/todos')
   } else {
+    store.dispatch(actions.logout());
     hashHistory.push('/')
   }
 })
-
-// store.subscribe(() => {
-//   var state = store.getState();
-//   console.log('New state', state);
-//   TodoAPI.setTodos(state.todos);
-// });
-
-// var initialTodos = TodoAPI.getTodos();
-//get initial todos from store by dispatching action addTodos to the store
-// store.dispatch(actions.addTodos(initialTodos));
 
 store.dispatch(actions.startAddTodos())
 
@@ -33,9 +25,6 @@ $(document).foundation();
 
 //app css
 require('style!css!sass!applicationStyles')
-
-
-
 
 ReactDOM.render(
   <Provider store={store}>
