@@ -20,7 +20,7 @@ var TodoAPI = require('TodoAPI');
 // store.dispatch(actions.addTodos(initialTodos));
 
 store.dispatch(actions.startAddTodos())
-console.log(actions.startAddTodos());
+
 // load foundation
 $(document).foundation();
 
