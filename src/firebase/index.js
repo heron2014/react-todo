@@ -1,19 +1,13 @@
 import firebase from 'firebase';
-import {apiKey} from './keys';
-import {authDomain} from './keys';
-import {databaseURL} from './keys';
-import {storageBucket} from './keys';
-import {messagingSenderId} from './keys';
-
-console.log(apiKey);
+require('env2')('.env');
 // Initialize Firebase
 try {
   var config = {
-    apiKey: apiKey,
-    authDomain: authDomain,
-    databaseURL: databaseURL,
-    storageBucket: storageBucket,
-    messagingSenderId: messagingSenderId
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId
   };
 
   firebase.initializeApp(config);
