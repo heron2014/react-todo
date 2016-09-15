@@ -1,4 +1,3 @@
 node_modules/
-src/firebase/keys.js
+config/
 public/bundle.js
-.env
