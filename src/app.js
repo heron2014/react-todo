@@ -10,15 +10,14 @@ import router from 'src/router/'
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    store.dispatch(actions.login(user.uid))
+    store.dispatch(actions.login(user.uid));
+    store.dispatch(actions.startAddTodos());
     hashHistory.push('/todos')
   } else {
     store.dispatch(actions.logout());
     hashHistory.push('/')
   }
 })
-
-store.dispatch(actions.startAddTodos())
 
 // load foundation
 $(document).foundation();
