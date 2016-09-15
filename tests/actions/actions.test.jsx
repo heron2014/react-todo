@@ -98,13 +98,18 @@ describe('Actions', () => {
       var testTodoRef;
 
       beforeEach((done) => {
-        testTodoRef = firebaseRef.child('todos').push();
+        var todosRef = firebaseRef.child('todos');
 
-        testTodoRef.set({
-          text: 'Something todo from test',
-          completed: false,
-          createdAt: 45454545
-        }).then(() => done());
+        todosRef.remove().then(() => {
+          testTodoRef = firebaseRef.child('todos').push();
+          return testTodoRef.set({
+            text: 'Something todo from test',
+            completed: false,
+            createdAt: 45454545
+          })
+        })
+        .then(() => done())
+        .catch(done);
       });
 
       afterEach((done) => {
@@ -130,7 +135,7 @@ describe('Actions', () => {
           expect(mockActions[0].updates.completedAt).toExist();
 
           done();
-          
+
         }, done);
       })
   })

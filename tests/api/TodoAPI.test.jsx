@@ -5,9 +5,9 @@ var TodoAPI = require('TodoAPI');
 describe('TodoAPI', () => {
   //this following code will run before each of the tests
   // we can clean up our localStorage
-  beforeEach(() => {
-    localStorage.removeItem('todos');
-  });
+  // beforeEach(() => {
+  //   localStorage.removeItem('todos');
+  // });
 
   it('should exist', () => {
     expect(TodoAPI).toExist();
